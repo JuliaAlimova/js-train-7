@@ -140,14 +140,6 @@ let rangeObject = {
         done: true,
       };
     }
-    // return this.current <= this.to
-    //   ? {
-    //       done: false,
-    //       value: this.current++,
-    //     }
-    //   : {
-    //       done: true,
-    //     };
   },
   // Використовуємо Symbol.iterator для створення ітератора всередині об'єкта "rangeObject"
   // this.current присвоюємо this.from
@@ -161,11 +153,13 @@ let rangeObject = {
 
 // Функція "useSymbolIterator" використовує ітератор для отримання значень об'єкта
 function useSymbolIterator(obj) {
+  let result = [];
+
   for (let element of obj) {
-    let result = [];
     result.push(element);
-    return result;
   }
+  return result;
+
   // Проходимо крізь елементи об'єкта obj, використовуючи цикл "for...of"
   // Додаємо кожне значення до масиву "result"
   // Повертаємо масив зі значеннями
